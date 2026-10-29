@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +7,53 @@
 <title>Urban Cuts – Book a slot</title>
 <link rel="stylesheet" href="style.css">
 <script src="main.js" defer></script>
+<style>
+  #chase {
+    position: fixed !important;
+    top: auto !important;
+    left: auto !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    transform: none !important;
+  }
+
+  @media (max-width: 900px) {
+    #chase {
+      right: 16px !important;
+      bottom: 16px !important;
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
 </head>
 <body>
 <header id="hd">
   <div class="hbar">
-    <nav class="nl"><a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#gallery">Gallery</a></nav>
+    <nav class="nl">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#gallery">Gallery</a>
+    </nav>
     <span></span>
-    <nav class="nr"><a href="index.html#visit">Visit</a><a href="tel:+923164233912">Call us</a></nav>
+    <nav class="nr">
+      <a href="index.html#visit">Visit</a>
+      <a href="tel:+923164233912">Call us</a>
+    </nav>
   </div>
-  <a class="ribbon" href="index.html" aria-label="Urban Cuts home"><div class="rib">
-    <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="28" cy="80" r="12"/><circle cx="72" cy="80" r="12"/><path d="M34 70 L66 8 M66 70 L34 8" stroke-linecap="round"/></svg>
-    <span class="rb">Urban Cuts</span><span class="rs">Men’s salon</span>
-  </div></a>
+  <a class="ribbon" href="index.html" aria-label="Urban Cuts home">
+    <div class="rib">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="28" cy="80" r="12"/>
+        <circle cx="72" cy="80" r="12"/>
+        <path d="M34 70 L66 8 M66 70 L34 8" stroke-linecap="round"/>
+      </svg>
+      <span class="rb">Urban Cuts</span>
+      <span class="rs">Men’s salon</span>
+    </div>
+  </a>
 </header>
 
 <main class="book">
@@ -27,40 +63,63 @@
   <div class="grid">
     <div class="panel">
       <div class="mh">
-        <button id="prev" aria-label="Previous month">‹</button>
+        <button id="prev" type="button" aria-label="Previous month">‹</button>
         <b id="month"></b>
-        <button id="next" aria-label="Next month">›</button>
+        <button id="next" type="button" aria-label="Next month">›</button>
       </div>
-      <div class="wd"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+
+      <div class="wd">
+        <span>Mon</span><span>Tue</span><span>Wed</span>
+        <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+
       <div class="days" id="days"></div>
+
       <div class="legend">
-        <span><i></i>Open</span><span><i class="l2"></i>Booked</span><span><i class="l3"></i>Your pick</span>
+        <span><i></i>Open</span>
+        <span><i class="l2"></i>Booked</span>
+        <span><i class="l3"></i>Your pick</span>
       </div>
     </div>
 
     <div class="panel">
       <p class="sum" id="sum">Choose a day</p>
-      <div id="slots"><p class="hint">Open and booked times for the day you pick will show here.</p></div>
+      <div id="slots">
+        <p class="hint">Open and booked times for the day you pick will show here.</p>
+      </div>
     </div>
   </div>
 </main>
 
-
-<button class="chase" id="chase" type="button" style="position:fixed !important; top:auto !important; left:auto !important; right:20px !important; bottom:20px !important; margin:0 !important; z-index:9999 !important;">Book a slot</button>
-
+<button class="chase" id="chase" type="button">Book a slot</button>
 
 <dialog id="dlg">
   <form method="dialog" id="form">
     <h3>Confirm your slot</h3>
     <p class="when" id="when"></p>
-    <label>Your name<input id="fName" required maxlength="60" autocomplete="name"></label>
-    <label>Phone number<input id="fPhone" required type="tel" maxlength="20" autocomplete="tel" placeholder="03xx xxxxxxx"></label>
-    <label>Service
+
+    <label>
+      Your name
+      <input id="fName" required maxlength="60" autocomplete="name">
+    </label>
+
+    <label>
+      Phone number
+      <input id="fPhone" required type="tel" maxlength="20" autocomplete="tel" placeholder="03xx xxxxxxx">
+    </label>
+
+    <label>
+      Service
       <select id="fService">
-        <option>Haircut</option><option>Beard trim</option><option>Haircut and beard</option>
-        <option>Hot towel shave</option><option>Facial</option><option>Hair colour</option>
+        <option>Haircut</option>
+        <option>Beard trim</option>
+        <option>Haircut and beard</option>
+        <option>Hot towel shave</option>
+        <option>Facial</option>
+        <option>Hair colour</option>
       </select>
     </label>
+
     <div class="row">
       <button class="btn line" type="button" id="cancel">Cancel</button>
       <button class="btn" type="submit" id="confirm">Confirm booking</button>
