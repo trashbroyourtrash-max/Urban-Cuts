@@ -181,3 +181,26 @@ input,select{display:block;width:100%;margin-top:6px;border-radius:10px;font:inh
  .ribbon{width:172px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* FIX: Keep the booking button at the bottom-right */
+.chase {
+  position: fixed !important;
+  top: auto !important;
+  left: auto !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  transform: none;
+}
+
+/* Button size on smaller screens */
+@media (max-width: 900px) {
+  .chase {
+    right: 16px !important;
+    bottom: 16px !important;
+    width: 96px;
+    height: 96px;
+  }
+}
+
