@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urban Cuts – Book a slot</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="hd">
+  <div class="hbar">
+    <nav class="nl"><a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#gallery">Gallery</a></nav>
+    <span></span>
+    <nav class="nr"><a href="index.html#visit">Visit</a><a href="tel:+923164233912">Call us</a></nav>
+  </div>
+  <a class="ribbon" href="index.html" aria-label="Urban Cuts home"><div class="rib">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="28" cy="80" r="12"/><circle cx="72" cy="80" r="12"/><path d="M34 70 L66 8 M66 70 L34 8" stroke-linecap="round"/></svg>
+    <span class="rb">Urban Cuts</span><span class="rs">Men’s salon</span>
+  </div></a>
+</header>
+
+<main class="book">
+  <h1>Book a slot</h1>
+  <p class="lead">Choose a day, pick an open time, then catch the red button to confirm.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="mh">
+        <button id="prev" aria-label="Previous month">‹</button>
+        <b id="month"></b>
+        <button id="next" aria-label="Next month">›</button>
+      </div>
+      <div class="wd"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+      <div class="days" id="days"></div>
+      <div class="legend">
+        <span><i></i>Open</span><span><i class="l2"></i>Booked</span><span><i class="l3"></i>Your pick</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="sum" id="sum">Choose a day</p>
+      <div id="slots"><p class="hint">Open and booked times for the day you pick will show here.</p></div>
+    </div>
+  </div>
+</main>
+
+<button class="chase" id="chase" type="button">Book a slot</button>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h3>Confirm your slot</h3>
+    <p class="when" id="when"></p>
+    <label>Your name<input id="fName" required maxlength="60" autocomplete="name"></label>
+    <label>Phone number<input id="fPhone" required type="tel" maxlength="20" autocomplete="tel" placeholder="03xx xxxxxxx"></label>
+    <label>Service
+      <select id="fService">
+        <option>Haircut</option><option>Beard trim</option><option>Haircut and beard</option>
+        <option>Hot towel shave</option><option>Facial</option><option>Hair colour</option>
+      </select>
+    </label>
+    <div class="row">
+      <button class="btn line" type="button" id="cancel">Cancel</button>
+      <button class="btn" type="submit" id="confirm">Confirm booking</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>
