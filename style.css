@@ -1,3 +1,4 @@
+
 :root{--bg:#121110;--bg2:#171614;--panel:#1c1b19;--panel2:#26241f;--ink:#f1ece2;--soft:#a8a198;--line:#322f2a;--tan:#b39a6a;--tan2:#8f7a4f;--red:#a23a33;--blue:#25406b;--gap:260px}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -136,9 +137,9 @@ footer b{display:block;font-weight:400;font-size:1.7rem;color:var(--ink);margin-
 .slot:disabled{cursor:not-allowed;color:var(--soft);background:repeating-linear-gradient(135deg,var(--panel2) 0 5px,#1a1916 5px 10px);text-decoration:line-through}
 .hint{color:var(--soft);margin:0;font-style:italic}
 
-/* the button that follows your cursor */
-.chase{position:fixed;left:0;top:0;z-index:40;width:116px;height:116px;margin:-58px 0 0 -58px;border-radius:50%;border:0;background:var(--red);color:var(--ink);font:400 1.1rem/1.15 'Times New Roman',Times,serif;cursor:pointer;box-shadow:0 18px 40px -14px rgba(162,58,51,.8);will-change:transform;transition:width .25s,height .25s,margin .25s,background .25s,color .25s}
-.chase:hover{width:136px;height:136px;margin:-68px 0 0 -68px;background:var(--tan);color:#1a1610}
+/* floating booking button, fixed at the bottom-right */
+.chase{position:fixed;right:18px;bottom:18px;left:auto;top:auto;z-index:40;width:116px;height:116px;margin:0;border-radius:50%;border:0;background:var(--red);color:var(--ink);font:400 1.1rem/1.15 'Times New Roman',Times,serif;cursor:pointer;box-shadow:0 18px 40px -14px rgba(162,58,51,.8);will-change:transform;transition:width .25s,height .25s,right .25s,bottom .25s,background .25s,color .25s;opacity:1;visibility:visible;pointer-events:auto}
+.chase:hover{width:136px;height:136px;right:8px;bottom:8px;background:var(--tan);color:#1a1610}
 .chase.shake{animation:shake .4s}
 @keyframes shake{25%{translate:-8px 0}50%{translate:8px 0}75%{translate:-5px 0}}
 .chase.ready::after{content:'';position:absolute;inset:-7px;border-radius:50%;border:1.5px solid var(--red);animation:ring 1.6s infinite}
@@ -162,7 +163,7 @@ input,select{display:block;width:100%;margin-top:6px;border-radius:10px;font:inh
  .vtext{text-align:center}.vtext .rule{margin:18px auto 28px}.vtext .btns{justify-content:center}
  .arr{display:none}
  .book{padding-top:190px}
- .chase{width:96px;height:96px;margin:-48px 0 0 -48px;font-size:1rem}
+ .chase{width:96px;height:96px;margin:0;right:18px;bottom:18px;font-size:1rem}
 }
 @media (max-width:1100px){
  nav a{font-size:.74rem;letter-spacing:.1em;margin:0 10px}
